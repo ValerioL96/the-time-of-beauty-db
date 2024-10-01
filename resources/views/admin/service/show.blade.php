@@ -11,9 +11,9 @@
                     </h2>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-text">{{$service->description}}</h3>
-                    <h3 class="card-text">&euro; {{ $service->price }}</h3>
-                    <h3 class="card-text">{{ $service->duration }} min</h3>
+                    <h4 class="card-text">{{$service->description}}</h4>
+                    <h6 class="card-text">&euro; {{ $service->price }}</h6>
+                    <h6 class="card-text">{{ $service->duration }} min</h6>
                 </div>
 
                 {{-- card footer con bottoni torna a servizi, edit e elimina --}}
