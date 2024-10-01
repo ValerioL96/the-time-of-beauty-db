@@ -1,6 +1,7 @@
 <?php
-use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\HomeController as GuestHomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +21,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/', [GuestHomeController::class, 'index'])->name('home');
 Route::get('/home', [GuestHomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->name('admin.')->prefix('admin/')->group(
     function(){
-        Route::get('secret-home', [AdminHomeController::class, 'index'])->name('admin.home');
-        route::resource('user', AdminHomeController::class);
-    }
-);
+        // Route::get('project/delete', [AdminProjectController::class, 'deletedIndex'])->name('project.deleteindex');
+        // Route::patch('project/{project}/restore', [AdminProjectController::class, 'restore'])->name('project.restore');
+        // Route::delete('project/{project}/delete', [AdminProjectController::class, 'delete'])->name('project.permanent_delete');
+            Route::resource('/service', AdminServiceController::class);
+        }
+    );
