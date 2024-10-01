@@ -14,6 +14,7 @@
                         <th scope="col">Descrizione</th>
                         <th scope="col">Prezzo</th>
                         <th scope="col">Durata</th>
+                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,15 +26,15 @@
                         <td>{{ $service->description }}</td>
                         <td>&euro; {{ $service->price }}</td>
                         <td>{{ $service->duration }} min</td>
-                        {{-- <td>
-                            <a href="{{ route('admin.project.show', $service )}}" class="btn btn-info btn-sm">Show</a>
-                            <a href="{{ route('admin.project.edit', $service )}}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('admin.project.destroy', $service) }}" method="POST" class="d-inline-block delete-form mx-2" data_project_id="{{ $service->id }}" data_project_name="{{ $service->name }}">
+                        <td>
+                            <a href="{{ route('admin.service.show', $service )}}" class="btn btn-info btn-sm"><i class="fa-solid fa-eye"></i></a>
+                            <a href="{{ route('admin.service.edit', $service )}}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <form action="{{ route('admin.service.destroy', $service) }}" method="POST" class="d-inline-block delete-form " data_service_id="{{ $service->id }}" data_service_name="{{ $service->name }}">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
                             </form>
-                        </td> --}}
+                        </td>
                     </tr>
                     @endforeach
 
@@ -51,5 +52,5 @@
 @endsection
 
 @section('custom_script')
-@vite('resources/js/project/delete-confirmation.js')
+@vite('resources/js/service/delete-confirmation.js')
 @endsection

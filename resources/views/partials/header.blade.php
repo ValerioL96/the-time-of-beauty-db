@@ -15,14 +15,14 @@
                         Servizi
                     </a>
                 </li>
-                {{-- <li>
-                    <a class="nav-link" aria-current="page" href="{{ route('admin.project.create')}}">Create new project</a>
+                <li>
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.service.create')}}"><i class="fa-regular fa-square-plus"></i></a>
                 </li>
                 <li>
-                    <a class="nav-link active mx-2" href="{{ route('admin.project.deleteindex')}}"  aria-current="page">
+                    <a class="nav-link active mx-2" href="{{ route('admin.service.deleteindex')}}"  aria-current="page">
                         <i class="fa-solid fa-trash-can"></i>
                     </a>
-                </li> --}}
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
